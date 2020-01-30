@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Riversizes", "ConsoleApp4\Riversizes.csproj", "{0A68A7A4-21AF-4DDC-AB9C-26248CA1C195}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Riversizes", "RiverSizes\Riversizes.csproj", "{0A68A7A4-21AF-4DDC-AB9C-26248CA1C195}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibonacci", "Fibonacci\Fibonacci.csproj", "{97501E53-B6AB-49E4-B95F-D4E2BC4081C1}"
 EndProject

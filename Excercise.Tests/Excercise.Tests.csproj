@@ -54,7 +54,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApp4\Riversizes.csproj">
+    <ProjectReference Include="..\RiverSizes\Riversizes.csproj">
       <Project>{0a68a7a4-21af-4ddc-ab9c-26248ca1c195}</Project>
       <Name>Riversizes</Name>
     </ProjectReference>
