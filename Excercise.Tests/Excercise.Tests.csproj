@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="FibonacciTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RiversizeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MSTest.TestAdapter">
