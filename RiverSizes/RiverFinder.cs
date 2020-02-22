@@ -22,7 +22,7 @@ namespace Riversizes
                     zelleAbgeklappert[i, j] = true;
                     var counter = 1;
 
-                    counter = RecursiveNeighborCheck(counter, zelleAbgeklappert, matrix,i, j);
+                    counter = RecursiveNeighborCheck(counter, zelleAbgeklappert, matrix, i, j);
 
                     riverSizes.Add(counter);
                 }
@@ -35,44 +35,28 @@ namespace Riversizes
         {
             var localCounter = counter;
 
-            if (matrix.GetLowerBound(1) <= i + 1 && 
-                matrix.GetUpperBound(1) >= i + 1 && 
-                zelleAbgeklappert.GetLowerBound(1) < i + 1 && 
-                zelleAbgeklappert.GetUpperBound(1) > i + 1 &&
-                !zelleAbgeklappert[i + 1, j] && 
-                matrix[i + 1, j] != 0)
+            if (matrix.GetUpperBound(1) >= i + 1 && !zelleAbgeklappert[i + 1, j] && matrix[i + 1, j] != 0)
             {
-                zelleAbgeklappert[i + 1, j] = true;
-                localCounter += RecursiveNeighborCheck(counter, zelleAbgeklappert, matrix, i + 1, j);
+                zelleAbgeklappert[i + 1, j] =  true;
+                localCounter                += RecursiveNeighborCheck(counter, zelleAbgeklappert, matrix, i + 1, j);
             }
 
-            if (matrix.GetLowerBound(0) <= j + 1 && 
-                matrix.GetUpperBound(0) >= j + 1 &&
-                zelleAbgeklappert.GetLowerBound(0) <= j + 1 &&
-                zelleAbgeklappert.GetUpperBound(0) >= j + 1 &&
-                !zelleAbgeklappert[i, j + 1] && 
-                matrix[i, j + 1] != 0 )
+            if (matrix.GetUpperBound(0) >= j + 1 && !zelleAbgeklappert[i, j + 1] && matrix[i, j + 1] != 0)
             {
-                zelleAbgeklappert[i, j + 1] = true;
-                localCounter += RecursiveNeighborCheck(counter, zelleAbgeklappert, matrix, i, j +1);
+                zelleAbgeklappert[i, j + 1] =  true;
+                localCounter                += RecursiveNeighborCheck(counter, zelleAbgeklappert, matrix, i, j + 1);
             }
 
-            if (matrix.GetLowerBound(1) <= i - 1 && 
-                zelleAbgeklappert.GetLowerBound(1) <= i - 1 &&
-                !zelleAbgeklappert[i - 1, j] && 
-                matrix[i - 1, j] != 0 )
+            if (matrix.GetLowerBound(1) <= i - 1 && !zelleAbgeklappert[i - 1, j] && matrix[i - 1, j] != 0)
             {
-                zelleAbgeklappert[i - 1, j] = true;
-                localCounter += RecursiveNeighborCheck(counter, zelleAbgeklappert, matrix, i - 1, j);
+                zelleAbgeklappert[i - 1, j] =  true;
+                localCounter                += RecursiveNeighborCheck(counter, zelleAbgeklappert, matrix, i - 1, j);
             }
 
-            if (matrix.GetLowerBound(0) <= j - 1 && 
-                zelleAbgeklappert.GetLowerBound(0) <= j - 1 &&
-                !zelleAbgeklappert[i, j - 1] &&  
-                matrix[i, j - 1] != 0)
+            if (matrix.GetLowerBound(0) <= j - 1 && !zelleAbgeklappert[i, j - 1] && matrix[i, j - 1] != 0)
             {
-                zelleAbgeklappert[i, j - 1]= true;
-                localCounter += RecursiveNeighborCheck(counter, zelleAbgeklappert, matrix, i, j -1);
+                zelleAbgeklappert[i, j - 1] =  true;
+                localCounter                += RecursiveNeighborCheck(counter, zelleAbgeklappert, matrix, i, j - 1);
             }
 
             return localCounter;
